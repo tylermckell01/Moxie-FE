@@ -6,22 +6,18 @@ export default function TeamMembers({ activeLeader }) {
     leader4: ["team4member", "team4member", "team4member"],
   };
 
-  const renderTeam = () => {
-    if (!activeLeader) return null;
+  if (!activeLeader) return null;
 
-    return (
-      <div>
-        <div className="team-leader">{activeLeader}'s team</div>
-        <div className="team-members-wrapper">
-          {teams[activeLeader].map((member, index) => (
-            <div key={index} className="team-member">
-              {member}
-            </div>
-          ))}
-        </div>
+  return (
+    <div className="team-members-container">
+      <div className="team-leader">{activeLeader}'s team</div>
+      <div className="team-members-wrapper">
+        {teams[activeLeader].map((member, index) => (
+          <div key={index} className="team-member">
+            {member}
+          </div>
+        ))}
       </div>
-    );
-  };
-
-  return <div className="team-members-container">{renderTeam()}</div>;
+    </div>
+  );
 }
