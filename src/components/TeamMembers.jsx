@@ -1,6 +1,6 @@
 export default function TeamMembers({ activeLeader }) {
   const teams = {
-    leader1: ["team1member", "team1member", "team1member"],
+    Andrew: ["Raegan", "Harmony", "Baby-boy", "Rachel"],
     leader2: ["team2member", "team2member", "team2member"],
     leader3: ["team3member", "team3member", "team3member"],
     leader4: ["team4member", "team4member", "team4member"],
@@ -10,13 +10,18 @@ export default function TeamMembers({ activeLeader }) {
     if (!activeLeader) return null;
 
     return (
-      <div className="team-members">
-        {teams[activeLeader].map((member, index) => (
-          <div key={index}>{member}</div>
-        ))}
+      <div>
+        <div className="team-leader">{activeLeader}'s team</div>
+        <div className="team-members-wrapper">
+          {teams[activeLeader].map((member, index) => (
+            <div key={index} className="team-member">
+              {member}
+            </div>
+          ))}
+        </div>
       </div>
     );
   };
 
-  return <div className="team-members-wrapper">{renderTeam()}</div>;
+  return <div className="team-members-container">{renderTeam()}</div>;
 }

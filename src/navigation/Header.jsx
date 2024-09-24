@@ -10,7 +10,7 @@ export default function Header() {
     <div>
       <div className="header-wrapper">
         <div className="leader">
-          <button onClick={() => setActiveLeader("leader1")}>leader1</button>
+          <button onClick={() => setActiveLeader("Andrew")}>Andrew</button>
         </div>
         <div className="leader">
           <button onClick={() => setActiveLeader("leader2")}>leader2</button>

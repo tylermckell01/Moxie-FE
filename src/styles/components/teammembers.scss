@@ -1,4 +1,27 @@
-.team-members-wrapper {
-  display: flex;
-  justify-content: center;
+.team-members-container {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  padding: 20px;
+
+  .team-leader {
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: $moxie-blue;
+    text-align: center;
+    width: 100px;
+  }
+
+  .team-members-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+
+    .team-member {
+      border: 1px solid black;
+    }
+  }
 }
