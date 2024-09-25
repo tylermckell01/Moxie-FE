@@ -40,8 +40,8 @@
       content: "";
       position: absolute;
       top: -20px; // Adjust to sit right above the first row of team members
-      left: 0;
-      right: 0;
+      left: 123px;
+      right: 123px;
       height: 2px;
       background-color: black;
     }
@@ -62,11 +62,6 @@
         height: 20px; // Vertical line length
         background-color: black;
       }
-
-      // Disable lines for team members beyond the first row
-      // &:nth-child(n + 5)::before {
-      //   display: none;
-      // }
     }
 
     div {
