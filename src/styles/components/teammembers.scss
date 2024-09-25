@@ -14,14 +14,31 @@
   }
 
   .team-members-wrapper {
-    width: 100%;
+    position: relative;
+    width: 75%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    // grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 20px;
 
     .team-member {
+      position: relative;
       border: 1px solid black;
+      text-align: center;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 20px;
+        background-color: black;
+      }
+
+      &:nth-child(-n + 4)::before {
+        display: none;
+      }
     }
   }
 }

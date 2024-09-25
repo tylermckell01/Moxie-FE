@@ -9,16 +9,16 @@ export default function Header() {
   return (
     <div>
       <div className="header-wrapper">
-        <div className="leader">
+        <div className="leader-button">
           <button onClick={() => setActiveLeader("Andrew")}>Andrew</button>
         </div>
-        <div className="leader">
+        <div className="leader-button">
           <button onClick={() => setActiveLeader("leader2")}>leader2</button>
         </div>
-        <div className="leader">
+        <div className="leader-button">
           <button onClick={() => setActiveLeader("leader3")}>leader3</button>
         </div>
-        <div className="leader">
+        <div className="leader-button">
           <button onClick={() => setActiveLeader("leader4")}>leader4</button>
         </div>
       </div>

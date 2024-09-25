@@ -5,8 +5,23 @@
   display: flex;
   justify-content: space-around;
 
-  .leader {
+  .leader-button {
     display: flex;
     align-items: center;
+    text-decoration: none;
+
+    button {
+      background-color: white;
+      font-size: x-large;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $moxie-darkblue;
+        color: white;
+      }
+    }
   }
 }
