@@ -3,41 +3,83 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  position: relative;
 
   .team-leader {
     padding: 10px;
-    margin: 15px;
+    margin: 35px;
     border-radius: 10px;
     background-color: $moxie-blue;
     text-align: center;
     width: 100px;
+    position: relative;
+
+    // Vertical line leading down from team leader
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -45px; // Adjust to extend below the team leader
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 45px; // Height of the "trunk" line connecting to the top row
+      background-color: black;
+    }
   }
 
   .team-members-wrapper {
     position: relative;
     width: 75%;
+    margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+
+    // Horizontal line spanning across the first row
+    &::before {
+      content: "";
+      position: absolute;
+      top: -20px; // Adjust to sit right above the first row of team members
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: black;
+    }
 
     .team-member {
       position: relative;
       border: 1px solid black;
       text-align: center;
 
+      // Vertical line connecting each team member to the horizontal line
       &::before {
         content: "";
         position: absolute;
-        top: -20px;
+        top: -20px; // Adjust to meet the horizontal line
         left: 50%;
         transform: translateX(-50%);
         width: 2px;
-        height: 20px;
+        height: 20px; // Vertical line length
         background-color: black;
       }
 
-      &:nth-child(-n + 4)::before {
-        display: none;
+      // Disable lines for team members beyond the first row
+      // &:nth-child(n + 5)::before {
+      //   display: none;
+      // }
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 130px;
+      }
+
+      .edit-button {
+        width: 50px;
+        text-align: center;
       }
     }
   }
