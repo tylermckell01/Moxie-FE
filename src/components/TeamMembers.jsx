@@ -36,6 +36,8 @@ export default function TeamMembers({ activeLeader }) {
   const [addingRegional, setAddingRegional] = useState(false);
   const [newRegional, setNewRegional] = useState("");
   const [updatedRegionalList, setUpdatedRegionalList] = useState(null);
+  const [showAMs, setShowAMs] = useState(false);
+  const [showReps, setShowReps] = useState(false);
 
   // const teams = {
   //   Andrew: ["Regional1", "Regional2", "Regional3", "Regional4", "Regional5"],
@@ -48,22 +50,30 @@ export default function TeamMembers({ activeLeader }) {
     return (
       <div>
         {regionals.map((regional, index) => (
-          <div key={index} className="team-member">
+          <div
+            key={index}
+            className="team-member regional"
+            onClick={() => setShowAMs(!showAMs)}
+          >
             {regional.name}
-            {renderAreaManagers(regional.area_manager)}
+            {showAMs && renderAreaManagers(regional.area_manager)}
           </div>
         ))}
       </div>
     );
   };
 
-  const renderAreaManagers = (areaManagers) => {
+  const renderAreaManagers = (area_managers) => {
     return (
       <div>
-        {areaManagers.map((areaManager, index) => (
-          <div key={index} className="team-member">
-            {areaManager.name}
-            {renderReps(areaManager.reps)}
+        {area_managers.map((area_manager, index) => (
+          <div
+            key={index}
+            className="team-member area-manager"
+            onClick={() => setShowReps(!showReps)}
+          >
+            {area_manager.name}
+            {showReps && renderReps(area_manager.reps)}
           </div>
         ))}
       </div>
@@ -74,8 +84,8 @@ export default function TeamMembers({ activeLeader }) {
     return (
       <div>
         {reps.map((rep, index) => (
-          <div key={index} className="team-member">
-            {rep.name}
+          <div key={index} className="team-member rep">
+            {rep}
           </div>
         ))}
       </div>
@@ -119,9 +129,10 @@ export default function TeamMembers({ activeLeader }) {
           </div>
         ))} */}
 
-        {updatedRegionalList
+        {/* {updatedRegionalList
           ? renderRegionals(updatedRegionalList[activeLeader][0].regionals)
-          : renderRegionals(teams[activeLeader][0].regionals)}
+          : renderRegionals(teams[activeLeader][0].regionals)} */}
+        {renderRegionals(teams[activeLeader][0].regionals)}
 
         {addingRegional ? (
           <div>

@@ -14,17 +14,17 @@
     width: 100px;
     position: relative;
 
-    // Vertical line leading down from team leader
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -45px; // Adjust to extend below the team leader
-      left: 50%;
-      transform: translateX(-50%);
-      width: 2px;
-      height: 45px; // Height of the "trunk" line connecting to the top row
-      background-color: black;
-    }
+    // // Vertical line leading down from team leader
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   bottom: -45px; // Adjust to extend below the team leader
+    //   left: 50%;
+    //   transform: translateX(-50%);
+    //   width: 2px;
+    //   height: 45px; // Height of the "trunk" line connecting to the top row
+    //   background-color: black;
+    // }
   }
 
   .team-members-wrapper {
@@ -33,35 +33,45 @@
     margin-top: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 50px;
 
-    // Horizontal line spanning across the first row
-    &::before {
-      content: "";
-      position: absolute;
-      top: -20px; // Adjust to sit right above the first row of team members
-      left: 123px;
-      right: 123px;
-      height: 2px;
-      background-color: black;
-    }
+    // // Horizontal line spanning across the first row
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: -20px; // Adjust to sit right above the first row of team members
+    //   left: 123px;
+    //   right: 123px;
+    //   height: 2px;
+    //   background-color: black;
+    // }
 
     .team-member {
+      display: flex;
+      flex-direction: column;
       position: relative;
       border: 1px solid black;
       text-align: center;
+      cursor: pointer;
 
-      // Vertical line connecting each team member to the horizontal line
-      &::before {
-        content: "";
-        position: absolute;
-        top: -20px; // Adjust to meet the horizontal line
-        left: 50%;
-        transform: translateX(-50%);
-        width: 2px;
-        height: 20px; // Vertical line length
-        background-color: black;
+      &:hover {
+        background-color: $moxie-blue;
       }
+
+      // // Vertical line connecting each team member to the horizontal line
+      // &::before {
+      //   content: "";
+      //   position: absolute;
+      //   top: -20px; // Adjust to meet the horizontal line
+      //   left: 50%;
+      //   transform: translateX(-50%);
+      //   width: 2px;
+      //   height: 20px; // Vertical line length
+      //   background-color: black;
+      // }
+    }
+
+    .regional {
     }
 
     div {
